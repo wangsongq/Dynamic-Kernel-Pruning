@@ -25,5 +25,24 @@ Please refer to our [paper](https://arxiv.org/abs/2506.13151) for detailed exper
 ```bash
 git clone https://github.com/wangsongq/Dynamic-Kernel-Pruning.git
 cd Dynamic-Kernel-Pruning
-
 pip install -r requirements.txt
+```
+## 📝 Script Overview: `cimcam_mnist_cnn.py`
+
+This script implements a **VGG16-like CNN** with:
+
+**Binary convolution layers** (weights binarized to +1/-1)  
+**Filter pruning based on Hamming distance similarity**  
+**Training and testing on MNIST dataset**
+
+### ⚙️ **Configurable Training Parameters**
+
+| Parameter | Description | Default |
+| --- | --- | --- |
+| `learning` | Learning rate for Adam optimizer | `0.001` |
+| `epoch` | Number of training epochs | `2` |
+| `batch_size` | Training batch size (in `DataLoader`) | `64` |
+| `threshold_c` | Pruning frequency threshold in `binary_prune_model` | `0.15` |
+| `threshold_b` | Variance scaling factor for pruning criterion | `0.146` |
+| `device` | GPU or CPU (auto-detected) | `"cuda:1"` if available |
+
