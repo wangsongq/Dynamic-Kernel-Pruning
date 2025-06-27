@@ -1,0 +1,20 @@
+# Core deep learning framework
+torch>=1.8.0
+torchvision>=0.9.0
+torchsummary
+einops
+
+# Numerical computation
+numpy
+pandas
+scipy
+
+# Visualization
+matplotlib
+tqdm
+
+# Data loading and preprocessing
+kagglehub
+
+# Others (ensure compatibility with torchvision transforms)
+# No additional explicit packages required here, as torchvision includes transforms
