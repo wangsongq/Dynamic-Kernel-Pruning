@@ -17,3 +17,13 @@ Our **digital CIM design** achieves:
 Together, our co-design establishes a **scalable brain-inspired paradigm for adaptive, energy-efficient edge intelligence**.
 
 Please refer to our [paper](https://arxiv.org/abs/2506.13151) for detailed experimental results, methodology, and chip design principles.
+
+# 🚀 Deployment
+
+## 1. Clone the repository
+
+```bash
+git clone https://github.com/wangsongq/Dynamic-Kernel-Pruning.git
+cd Dynamic-Kernel-Pruning
+
+pip install -r requirements.txt
