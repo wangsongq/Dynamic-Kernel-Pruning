@@ -40,7 +40,7 @@ This script implements a **VGG16-like CNN** with:
 | Parameter | Description | Default |
 | --- | --- | --- |
 | `learning` | Learning rate for Adam optimizer | `0.001` |
-| `epoch` | Number of training epochs | `2` |
+| `epoch` | Number of training epochs | `50` |
 | `batch_size` | Training batch size (in `DataLoader`) | `64` |
 | `threshold_c` | Pruning frequency threshold in `binary_prune_model` | `0.15` |
 | `threshold_b` | Variance scaling factor for pruning criterion | `0.146` |
@@ -54,7 +54,7 @@ This script implements **PointNet++ with quantization-based pruning** for 3D poi
 
 | Parameter     | Description                                   | Default   |
 |---------------|-----------------------------------------------|-----------|
-| `epoch`       | Number of training epochs                    | `100`     |
+| `epoch`       | Number of training epochs                    | `50`     |
 | `learning`    | Learning rate for Adam optimizer             | `0.001`   |
 | `threshold_c` | Pruning frequency threshold (filter pruning) | `0.45`    |
 | `threshold_b` | Pruning variance scaling threshold           | `0.01`    |
