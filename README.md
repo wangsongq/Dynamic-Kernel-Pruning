@@ -46,7 +46,7 @@ This script implements a **VGG16-like CNN** with:
 | `threshold_b` | Variance scaling factor for pruning criterion | `0.146` |
 | `device` | GPU or CPU (auto-detected) | `"cuda:1"` if available |
 
-## Script Overview: pointnet_train.py
+## Script Overview: `pointnet_train.py`
 
 This script implements **PointNet++ with quantization-based pruning** for 3D point cloud classification using PyTorch.
 
