@@ -18,7 +18,7 @@ Together, our co-design establishes a **scalable brain-inspired paradigm for ada
 
 Please refer to our [paper](https://arxiv.org/abs/2506.13151) for detailed experimental results, methodology, and chip design principles.
 
-# 🚀 Deployment
+# Deployment
 
 ## 1. Clone the repository
 
@@ -27,7 +27,7 @@ git clone https://github.com/wangsongq/Dynamic-Kernel-Pruning.git
 cd Dynamic-Kernel-Pruning
 pip install -r requirements.txt
 ```
-## 📝 Script Overview: `cimcam_mnist_cnn.py`
+## Script Overview: `cimcam_mnist_cnn.py`
 
 This script implements a **VGG16-like CNN** with:
 
@@ -35,7 +35,7 @@ This script implements a **VGG16-like CNN** with:
 **Filter pruning based on Hamming distance similarity**  
 **Training and testing on MNIST dataset**
 
-### ⚙️ **Configurable Training Parameters**
+### **Configurable Training Parameters**
 
 | Parameter | Description | Default |
 | --- | --- | --- |
@@ -45,4 +45,21 @@ This script implements a **VGG16-like CNN** with:
 | `threshold_c` | Pruning frequency threshold in `binary_prune_model` | `0.15` |
 | `threshold_b` | Variance scaling factor for pruning criterion | `0.146` |
 | `device` | GPU or CPU (auto-detected) | `"cuda:1"` if available |
+
+## Script Overview: pointnet_train.py
+
+This script implements **PointNet++ with quantization-based pruning** for 3D point cloud classification using PyTorch.
+
+### **Configurable Training Parameters**
+
+| Parameter     | Description                                   | Default   |
+|---------------|-----------------------------------------------|-----------|
+| `epoch`       | Number of training epochs                    | `100`     |
+| `learning`    | Learning rate for Adam optimizer             | `0.001`   |
+| `threshold_c` | Pruning frequency threshold (filter pruning) | `0.45`    |
+| `threshold_b` | Pruning variance scaling threshold           | `0.01`    |
+| `batch_size`  | Training batch size                          | `32`      |
+| `device`      | CUDA device selection                        | `"cuda:1"` if available |
+
+If you want to test the performance of a trained PointNet++ model, you can use pointnet_test.py. Remember to update the weights path in the code before running.
 
