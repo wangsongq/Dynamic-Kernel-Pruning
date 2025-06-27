@@ -20,7 +20,7 @@ Please refer to our [paper](https://arxiv.org/abs/2506.13151) for detailed exper
 
 # Deployment
 
-## 1. Clone the repository
+## Clone the repository
 
 ```bash
 git clone https://github.com/wangsongq/Dynamic-Kernel-Pruning.git
