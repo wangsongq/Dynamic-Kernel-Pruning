@@ -2,28 +2,48 @@
 
 The human brain simultaneously optimizes synaptic weights and network topology by growing, pruning, and strengthening synapses while performing all computation entirely in memory. In contrast, modern artificial intelligence systems separate weight optimization from topology optimization and depend on energy-intensive von Neumann architectures.
 
-Here, we present a **software–hardware co-design** that bridges this gap:
+Here, we present a **software–hardware co-design** that bridges this gap.
 
-- **Algorithmic side:** We introduce a real-time dynamic weight-pruning strategy that monitors weight similarity during training and removes redundancies on the fly, reducing operations by **26.80% on MNIST** and **59.94% on ModelNet10** while preserving accuracy (**91.44%** and **77.75%**, respectively). Across CIFAR-10/100 and ImageNet models, our method prunes **27–68.79%** of kernels with only **1–1.5%** accuracy drop.
+## Overview
 
-- **Hardware side:** We fabricate a **reconfigurable, fully digital compute-in-memory (CIM) chip** based on **180 nm one-transistor-one-resistor (1T1R) RRAM arrays**. Each array embeds flexible Boolean logic (**NAND, AND, XOR, OR**), enabling both convolution and similarity evaluation inside memory and eliminating ADC/DAC overhead.
+### Algorithmic side
 
-Under a **22 nm node-normalized reference**, our digital CIM design achieves:
+We introduce a **real-time dynamic weight-pruning strategy** that monitors weight similarity during training and removes redundancies on the fly.
+
+- On **MNIST**, the method reduces operations by **26.80%** while preserving **91.44%** accuracy.
+- On **ModelNet10**, the method reduces operations by **59.94%** while preserving **77.75%** accuracy.
+- Across **CIFAR-10, CIFAR-100, and ImageNet** models, the method prunes **27–68.79%** of kernels with only **1–1.5%** accuracy drop.
+
+### Hardware side
+
+We fabricate a **reconfigurable, fully digital compute-in-memory (CIM) chip** based on **180 nm one-transistor-one-resistor (1T1R) RRAM arrays**.
+
+- The chip integrates **reconfigurable Boolean logic** directly in memory, supporting **NAND, AND, XOR, and OR**.
+- The same in-memory hardware supports both **forward computation** and **weight-similarity evaluation**.
+- The fully digital design eliminates **ADC/DAC overhead** and avoids analogue-noise-induced accuracy degradation.
+
+## Key Results
+
+Under a **22 nm node-normalized reference**, the proposed digital RRAM CIM design achieves:
 
 - **CIM weight density:** **4.37 Mb/mm²**
 - **Energy efficiency:** **14.97 TOPS/W (8b/8b)** and **222.72 TOPS/W (1b/1b)**
 - **SWaP:** **973.1 TOPS/W·Mb/mm²**
 
-Compared with an **NVIDIA RTX 4090**, the digital RRAM system lowers energy consumption by:
+Here, **SWaP** denotes the product of **energy efficiency** and **CIM weight density**, capturing the joint benefit of compute efficiency and on-chip storage density under a fixed area budget.
+
+Compared with an **NVIDIA RTX 4090**, the digital RRAM system reduces energy consumption by:
 
 - **99.27% on MNIST**
 - **96.07% on ModelNet10**
 
-The chip supports multi-bit storage, with measured write bit error rates of **6.1×10⁻⁶** for binary storage and **2.4×10⁻⁴** for 2-bit storage.
+The chip also supports multi-bit storage, with measured write bit error rates of:
 
-Together, our co-design establishes a **scalable brain-inspired paradigm for adaptive, energy-efficient edge intelligence**.
+- **6.1×10⁻⁶** for **binary storage**
+- **2.4×10⁻⁴** for **2-bit storage**
 
-Please refer to the accompanying manuscript for detailed experimental results, methodology, and chip design principles.
+Together, this work establishes a **scalable brain-inspired paradigm for adaptive, energy-efficient edge intelligence**.
+---
 
 # Deployment
 
