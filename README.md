@@ -8,7 +8,7 @@ Here, we present a **software–hardware co-design** that bridges this gap.
 
 ### Algorithmic side
 
-We introduce a **real-time dynamic weight-pruning strategy** that monitors weight similarity during training and removes redundancies on the fly.
+We introduce a **real-time dynamic weight-pruning strategy** that monitors weight similarity during training and removes redundancies.
 
 - On **MNIST**, the method reduces operations by **26.80%** while preserving **91.44%** accuracy.
 - On **ModelNet10**, the method reduces operations by **59.94%** while preserving **77.75%** accuracy.
@@ -43,6 +43,7 @@ The chip also supports multi-bit storage, with measured write bit error rates of
 - **2.4×10⁻⁴** for **2-bit storage**
 
 Together, this work establishes a **scalable brain-inspired paradigm for adaptive, energy-efficient edge intelligence**.
+
 ---
 
 # Deployment
