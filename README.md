@@ -4,19 +4,26 @@ The human brain simultaneously optimizes synaptic weights and network topology b
 
 Here, we present a **software–hardware co-design** that bridges this gap:
 
-- **Algorithmic side:** We introduce a real-time dynamic weight pruning strategy that monitors weight similarity during training and removes redundancies on the fly, reducing operations by **26.8% on MNIST** and **59.9% on ModelNet10** without sacrificing accuracy (**91.4%** and **77.8%**, respectively).
+- **Algorithmic side:** We introduce a real-time dynamic weight-pruning strategy that monitors weight similarity during training and removes redundancies on the fly, reducing operations by **26.80% on MNIST** and **59.94% on ModelNet10** while preserving accuracy (**91.44%** and **77.75%**, respectively). Across CIFAR-10/100 and ImageNet models, our method prunes **27–68.79%** of kernels with only **1–1.5%** accuracy drop.
 
-- **Hardware side:** We fabricate a **reconfigurable, fully digital compute-in-memory (CIM) chip** based on 180 nm one-transistor-one-resistor (1T1R) RRAM arrays. Each array embeds flexible Boolean logic (NAND, AND, XOR, OR), enabling both convolution and similarity evaluation inside memory and eliminating all ADC/DAC overhead.
+- **Hardware side:** We fabricate a **reconfigurable, fully digital compute-in-memory (CIM) chip** based on **180 nm one-transistor-one-resistor (1T1R) RRAM arrays**. Each array embeds flexible Boolean logic (**NAND, AND, XOR, OR**), enabling both convolution and similarity evaluation inside memory and eliminating ADC/DAC overhead.
 
-Our **digital CIM design** achieves:
+Under a **22 nm node-normalized reference**, our digital CIM design achieves:
 
-- **Zero bit-error digital computing**
-- **72.3% reduction in silicon area** and **57.3% reduction in overall energy** compared to analogue RRAM CIM
-- **75.6% and 86.5% lower energy consumption** on MNIST and ModelNet10, respectively, compared to an NVIDIA RTX 4090 GPU.
+- **CIM weight density:** **4.37 Mb/mm²**
+- **Energy efficiency:** **14.97 TOPS/W (8b/8b)** and **222.72 TOPS/W (1b/1b)**
+- **SWaP:** **973.1 TOPS/W·Mb/mm²**
+
+Compared with an **NVIDIA RTX 4090**, the digital RRAM system lowers energy consumption by:
+
+- **99.27% on MNIST**
+- **96.07% on ModelNet10**
+
+The chip supports multi-bit storage, with measured write bit error rates of **6.1×10⁻⁶** for binary storage and **2.4×10⁻⁴** for 2-bit storage.
 
 Together, our co-design establishes a **scalable brain-inspired paradigm for adaptive, energy-efficient edge intelligence**.
 
-Please refer to our [paper](https://arxiv.org/abs/2506.13151) for detailed experimental results, methodology, and chip design principles.
+Please refer to the accompanying manuscript for detailed experimental results, methodology, and chip design principles.
 
 # Deployment
 
