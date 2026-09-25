@@ -12,7 +12,7 @@ We introduce a **real-time dynamic weight-pruning strategy** that monitors weigh
 
 - On **MNIST**, the method reduces operations by **26.80%** while preserving **91.44%** accuracy.
 - On **ModelNet10**, the method reduces operations by **59.94%** while preserving **77.75%** accuracy.
-- Across **CIFAR-10, CIFAR-100, and ImageNet** models, the method prunes **27–68.79%** of kernels with only **1–1.5%** accuracy drop.
+- Across **CIFAR-10, CIFAR-100, and ImageNet** models, the method prunes **up to 69%** of kernels at an accuracy cost of **1.6 percentage points**.
 
 ### Hardware side
 
@@ -26,16 +26,16 @@ We fabricate a **reconfigurable, fully digital compute-in-memory (CIM) chip** ba
 
 Under a **22 nm node-normalized reference**, the proposed digital RRAM CIM design achieves:
 
-- **CIM weight density:** **4.37 Mb/mm²**
-- **Energy efficiency:** **14.97 TOPS/W (8b/8b)** and **222.72 TOPS/W (1b/1b)**
-- **SWaP:** **973.1 TOPS/W·Mb/mm²**
+- **CIM weight density:** **4.0831 Mb/mm²**
+- **Energy efficiency:** **71.78 TOPS/W (8b/8b)** and **1189.50 TOPS/W (1b/1b)**
+- **SWaP:** **293.1 TOPS/W·Mb/mm²**
 
-Here, **SWaP** denotes the product of **energy efficiency** and **CIM weight density**, capturing the joint benefit of compute efficiency and on-chip storage density under a fixed area budget.
+Here, **SWaP** denotes the product of **signed INT8 (8b/8b) energy efficiency** and **CIM weight density**, capturing the joint benefit of compute efficiency and on-chip storage density under a fixed area budget.
 
-Compared with an **NVIDIA RTX 4090**, the digital RRAM system reduces energy consumption by:
+Under the same **22 nm node-normalized reference**, the digital RRAM system reduces network-level energy consumption relative to an **NVIDIA RTX 4090** by:
 
-- **99.27% on MNIST**
-- **96.07% on ModelNet10**
+- **99.28% on MNIST**
+- **99.18% on ModelNet10**
 
 The chip also supports multi-bit storage, with measured write bit error rates of:
 
